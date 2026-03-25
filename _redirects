@@ -1,1 +1,7 @@
-/* /index.html 200
+# Toro Movers — static site redirects
+# Clean URLs (optional: strip .html)
+/services        /services.html  200
+/areas           /areas.html     200
+/about           /about.html     200
+/reserve         /reserve.html   200
+
