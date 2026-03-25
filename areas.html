@@ -4,7 +4,7 @@
 
 
   <meta charset="UTF-8">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='7' fill='%230d1f3c'/><path d='M3.5 9h11v3.2H11v13.3H7V12.2H3.5V9z' fill='white'/><rect x='16.5' y='9' width='3.3' height='17.5' fill='white'/><path d='M19.8 9l4.2 9.5L28.2 9h2.3v17.5H27v-11l-3 6.8h-1.4l-3-6.8v11h-3.3V9h3.5z' fill='white'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='8' fill='%230d1f3c'/><path d='M6 21L10 13H24L28 21H6Z' fill='%23f07c1e'/><rect x='4' y='21' width='26' height='5' rx='1.5' fill='white' opacity='0.9'/><circle cx='10' cy='26.5' r='2.5' fill='%230d1f3c'/><circle cx='24' cy='26.5' r='2.5' fill='%230d1f3c'/></svg>">
   <link rel="canonical" href="https://toromovers.net/areas.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Service Areas — Toro Movers | 30+ Central Florida Cities</title>
@@ -14,6 +14,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./animate.css">
 </head>
 <body>
 <div class="urgency-bar"><span class="urgency-dot" aria-hidden="true"></span>Same-day &amp; next-day moves available — call <a href="tel:3217580094" style="color:var(--color-accent);font-weight:700;text-decoration:none;">321-758-0094</a></div>
@@ -23,7 +24,14 @@
   <div class="container">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="./index.html" class="nav-logo" aria-label="Toro Movers — Home">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="34" height="34" rx="7" fill="#0d1f3c"/><path d="M3.5 9h11v3.2H11v13.3H7V12.2H3.5V9z" fill="white"/><rect x="16.5" y="9" width="3.3" height="17.5" fill="white"/><path d="M19.8 9l4.2 9.5L28.2 9h2.3v17.5H27v-11l-3 6.8h-1.4l-3-6.8v11h-3.3V9h3.5z" fill="white"/></svg>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <rect width="34" height="34" rx="8" fill="#0d1f3c"/>
+          <path d="M6 21L10 13H24L28 21H6Z" fill="#f07c1e"/>
+          <rect x="4" y="21" width="26" height="5" rx="1.5" fill="white" opacity="0.9"/>
+          <circle cx="10" cy="26.5" r="2.5" fill="#0d1f3c"/>
+          <circle cx="24" cy="26.5" r="2.5" fill="#0d1f3c"/>
+          <path d="M10 13L12 8H20L22 13" fill="white" opacity="0.45"/>
+        </svg>
         <span class="nav-logo-text">Toro Movers</span>
       </a>
       <ul class="nav-links" role="list">
@@ -55,8 +63,8 @@
   <div class="container">
     <div class="page-hero-content">
       <span class="section-label" style="color: var(--color-accent);">Where We Move</span>
-      <h1 class="page-hero-title" id="page-title">Serving 30+ Cities Across Central Florida</h1>
-      <p class="page-hero-sub">One flat rate, no matter where you are in our coverage area. No per-mile charges — your location doesn't affect your price.</p>
+      <h1 class="page-hero-title hero-animate hero-animate-2" id="page-title">Serving 30+ Cities Across Central Florida</h1>
+      <p class="page-hero-sub hero-animate hero-animate-3">One flat rate, no matter where you are in our coverage area. No per-mile charges — your location doesn't affect your price.</p>
     </div>
   </div>
 </section>
@@ -79,11 +87,11 @@
   <div class="container">
     <header class="section-header">
       <span class="section-label">Coverage Area</span>
-      <h2 class="section-title" id="cities-heading">Cities We Serve</h2>
-      <p class="section-subtitle">Don't see your city? Call us — we may still be able to help.</p>
+      <h2 class="section-title" data-reveal="fade-up" id="cities-heading">Cities We Serve</h2>
+      <p class="section-subtitle" data-reveal="fade-up">Don't see your city? Call us — we may still be able to help.</p>
     </header>
 
-    <div class="area-cards-grid" role="list" aria-label="Cities served by Toro Movers">
+    <div class="area-cards-grid" data-stagger role="list" aria-label="Cities served by Toro Movers">
       <div class="area-card" role="listitem">
         <svg class="area-card-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
         Orlando
@@ -225,11 +233,11 @@
   <div class="container container--narrow">
     <header class="section-header">
       <span class="section-label">Common Questions</span>
-      <h2 class="section-title" id="faq-heading">About Our Service Area</h2>
+      <h2 class="section-title" data-reveal="fade-up" id="faq-heading">About Our Service Area</h2>
     </header>
 
     <div style="display:flex; flex-direction:column; gap: var(--space-4);">
-      <details style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
+      <details data-reveal="fade-up" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
         <summary style="font-weight:600; font-size: var(--text-base); cursor:pointer; color: var(--color-text); list-style:none; display:flex; justify-content:space-between; align-items:center; gap: var(--space-4);">
           Do you charge more for farther distances within your service area?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -237,7 +245,7 @@
         <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); line-height:1.7;">No. Our flat hourly rate is the same regardless of how far within our service area you're moving. No per-mile charges, no fuel surcharges — your location doesn't affect your price.</p>
       </details>
 
-      <details style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
+      <details data-reveal="fade-up" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
         <summary style="font-weight:600; font-size: var(--text-base); cursor:pointer; color: var(--color-text); list-style:none; display:flex; justify-content:space-between; align-items:center; gap: var(--space-4);">
           Can you move me to a city outside Central Florida?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -245,7 +253,7 @@
         <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); line-height:1.7;">We primarily serve Central Florida. For moves outside our standard service area, call us at <a href="tel:3217580094" style="color:var(--color-primary);font-weight:600;">321-758-0094</a> and we'll let you know if we can accommodate your move.</p>
       </details>
 
-      <details style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
+      <details data-reveal="fade-up" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5);">
         <summary style="font-weight:600; font-size: var(--text-base); cursor:pointer; color: var(--color-text); list-style:none; display:flex; justify-content:space-between; align-items:center; gap: var(--space-4);">
           My city isn't on the list. Can you still help?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -259,7 +267,7 @@
 <!-- ── CTA ────────────────────────────────────── -->
 <section aria-labelledby="cta-areas-heading">
   <div class="container container--narrow">
-    <div class="cta-banner">
+    <div class="cta-banner" data-reveal="scale">
       <h2 class="cta-banner-title" id="cta-areas-heading">Ready to Move in Central Florida?</h2>
       <p class="cta-banner-sub">Book online or call us for a fast quote. Same flat rate, no matter where you're moving.</p>
       <div style="display:flex; flex-wrap:wrap; gap: var(--space-4); justify-content:center;">
@@ -277,7 +285,7 @@
       <div>
         <div class="footer-brand-name">Toro Movers</div>
         <p class="footer-tagline">Family-owned, locally operated movers serving Central Florida. Transparent flat-rate pricing. No surprises.</p>
-        <a href="tel:3217580094" class="footer-phone-link">
+        <a href="tel:3217580094" class="footer-phone">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 013 2.22 2 2 0 014.11.79h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           321-758-0094
         </a>
@@ -316,5 +324,6 @@
 <script>
 var n=document.getElementById('nav-toggle'),m=document.getElementById('nav-mobile');if(n&&m){n.addEventListener('click',function(){var o=m.classList.toggle('open');n.classList.toggle('open',o);n.setAttribute('aria-expanded',o);});}
 window.addEventListener('scroll',function(){document.getElementById('site-header').classList.toggle('site-header--scrolled',window.scrollY>20);},{passive:true});
-</script></body>
+</script><script src="./animate.js" defer></script>
+</body>
 </html>
