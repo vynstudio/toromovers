@@ -472,6 +472,19 @@
       color: var(--color-text-muted);
       margin-bottom: var(--space-3);
     }
+
+    /* ── Mobile overrides ──────────────────────────────────── */
+    @media (max-width: 640px) {
+      .reserve-layout { padding-block: var(--space-8); }
+      .reserve-title { font-size: clamp(1.6rem, 1rem + 3vw, 2.5rem); }
+      .fields-grid { grid-template-columns: 1fr; }
+      .fields-datetime { grid-template-columns: 1fr; }
+      .service-card { grid-template-columns: auto 1fr; }
+      .service-card-price { display: none; }
+      .summary-card { padding: var(--space-5); }
+      .reserve-hero-strip .container { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+      .reserve-hero-badges { gap: var(--space-2); }
+    }
   </style>
 </head>
 <body>
