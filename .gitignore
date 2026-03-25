@@ -1,0 +1,4 @@
+# QA and design screenshot exports
+qa-*.png
+v2-*.png
+*.DS_Store
