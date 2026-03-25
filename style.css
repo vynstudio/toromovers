@@ -596,9 +596,9 @@ section { padding-block: clamp(var(--space-16), 9vw, var(--space-32)); }
   background: var(--color-bg);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-2xl);
-  padding: var(--space-8);
+  padding: var(--space-6);
   display: flex; flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-3);
   position: relative;
   transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
@@ -629,7 +629,7 @@ section { padding-block: clamp(var(--space-16), 9vw, var(--space-32)); }
 }
 
 .pricing-icon {
-  width: 52px; height: 52px;
+  width: 44px; height: 44px;
   border-radius: var(--radius-xl);
   background: var(--color-accent-light);
   display: flex; align-items: center; justify-content: center;
@@ -657,7 +657,7 @@ section { padding-block: clamp(var(--space-16), 9vw, var(--space-32)); }
 }
 .pricing-dollar {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-size: clamp(2.2rem, 3vw, 3rem);
   font-weight: 900;
   color: var(--color-accent);
   letter-spacing: -0.04em;
@@ -686,7 +686,7 @@ section { padding-block: clamp(var(--space-16), 9vw, var(--space-32)); }
 
 .pricing-features {
   list-style: none;
-  display: flex; flex-direction: column; gap: var(--space-3);
+  display: flex; flex-direction: column; gap: var(--space-2);
   flex: 1;
 }
 .pricing-features li {
