@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='7' fill='%230d1f3c'/><path d='M3.5 9h11v3.2H11v13.3H7V12.2H3.5V9z' fill='white'/><rect x='16.5' y='9' width='3.3' height='17.5' fill='white'/><path d='M19.8 9l4.2 9.5L28.2 9h2.3v17.5H27v-11l-3 6.8h-1.4l-3-6.8v11h-3.3V9h3.5z' fill='white'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='8' fill='%230d1f3c'/><path d='M6 21L10 13H24L28 21H6Z' fill='%23f07c1e'/><rect x='4' y='21' width='26' height='5' rx='1.5' fill='white' opacity='0.9'/><circle cx='10' cy='26.5' r='2.5' fill='%230d1f3c'/><circle cx='24' cy='26.5' r='2.5' fill='%230d1f3c'/></svg>">
   <link rel="canonical" href="https://toromovers.net/reserve.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Your Move — Toro Movers | Reserve Online in Minutes</title>
@@ -28,8 +28,8 @@
       padding-block: clamp(var(--space-12), 6vw, var(--space-20));
     }
     @media (max-width: 860px) {
-      .reserve-layout { grid-template-columns: 1fr; gap: var(--space-6); }
-      .reserve-summary { order: 2; position: static; }
+      .reserve-layout { grid-template-columns: 1fr; gap: var(--space-8); }
+      .reserve-summary { order: -1; }
     }
 
     /* ── Left: Service selector + contact form ─────────────── */
@@ -281,7 +281,6 @@
     .reserve-summary {
       position: sticky;
       top: calc(var(--space-16) + var(--space-6));
-      align-self: start;
     }
 
     .summary-card {
@@ -474,9 +473,8 @@
 
     /* ── Mobile overrides ──────────────────────────────────── */
     @media (max-width: 640px) {
-      .reserve-layout { padding-block: var(--space-6); }
-      .reserve-title { font-size: clamp(1.5rem, 1rem + 3vw, 2.5rem); }
-      .reserve-form-panel { gap: var(--space-4); }
+      .reserve-layout { padding-block: var(--space-8); }
+      .reserve-title { font-size: clamp(1.6rem, 1rem + 3vw, 2.5rem); }
       .fields-grid { grid-template-columns: 1fr; }
       .fields-datetime { grid-template-columns: 1fr; }
       .service-card { grid-template-columns: auto 1fr; }
@@ -486,6 +484,7 @@
       .reserve-hero-badges { gap: var(--space-2); }
     }
   </style>
+  <link rel="stylesheet" href="./animate.css">
 </head>
 <body>
 
@@ -500,7 +499,14 @@
   <div class="container">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="./index.html" class="nav-logo" aria-label="Toro Movers — Home">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="34" height="34" rx="7" fill="#0d1f3c"/><path d="M3.5 9h11v3.2H11v13.3H7V12.2H3.5V9z" fill="white"/><rect x="16.5" y="9" width="3.3" height="17.5" fill="white"/><path d="M19.8 9l4.2 9.5L28.2 9h2.3v17.5H27v-11l-3 6.8h-1.4l-3-6.8v11h-3.3V9h3.5z" fill="white"/></svg>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <rect width="34" height="34" rx="8" fill="#0d1f3c"/>
+          <path d="M6 21L10 13H24L28 21H6Z" fill="#f07c1e"/>
+          <rect x="4" y="21" width="26" height="5" rx="1.5" fill="white" opacity="0.9"/>
+          <circle cx="10" cy="26.5" r="2.5" fill="#0d1f3c"/>
+          <circle cx="24" cy="26.5" r="2.5" fill="#0d1f3c"/>
+          <path d="M10 13L12 8H20L22 13" fill="white" opacity="0.45"/>
+        </svg>
         <span class="nav-logo-text">Toro Movers</span>
       </a>
       <ul class="nav-links" role="list">
@@ -532,11 +538,11 @@
 <!-- HERO STRIP -->
 <div class="reserve-hero-strip" role="banner">
   <div class="container">
-    <div class="reserve-hero-text">
+    <div class="reserve-hero-text hero-animate hero-animate-1">
       <h1>Reserve Your Move</h1>
       <p>$50 deposit locks your date — credited to your final bill</p>
     </div>
-    <div class="reserve-hero-badges">
+    <div class="reserve-hero-badges hero-animate hero-animate-2">
       <div class="reserve-hero-badge">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Secure Checkout
@@ -579,12 +585,12 @@
       <!-- LEFT: Form -->
       <div class="reserve-form-panel">
         <div>
-          <div class="reserve-eyebrow">
+          <div class="reserve-eyebrow" data-reveal="fade-up">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             Step 1 of 1 — Quick &amp; Secure
           </div>
-          <h2 class="reserve-title">Choose Your Service &amp; <em>Lock Your Date</em></h2>
-          <p class="reserve-sub">Select a service, fill in your details, and pay the $50 deposit. We'll reach out within minutes to confirm everything.</p>
+          <h2 class="reserve-title" data-reveal="fade-up">Choose Your Service &amp; <em>Lock Your Date</em></h2>
+          <p class="reserve-sub" data-reveal="fade-up">Select a service, fill in your details, and pay the $50 deposit. We'll reach out within minutes to confirm everything.</p>
         </div>
 
         <form id="reserve-form" novalidate>
@@ -731,9 +737,15 @@
 
       <!-- RIGHT: Summary -->
       <aside class="reserve-summary" aria-label="Booking summary">
-        <div class="summary-card">
+        <div class="summary-card" data-reveal="slide-right">
           <div class="summary-header">
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="34" height="34" rx="7" fill="#0d1f3c"/><path d="M3.5 9h11v3.2H11v13.3H7V12.2H3.5V9z" fill="white"/><rect x="16.5" y="9" width="3.3" height="17.5" fill="white"/><path d="M19.8 9l4.2 9.5L28.2 9h2.3v17.5H27v-11l-3 6.8h-1.4l-3-6.8v11h-3.3V9h3.5z" fill="white"/></svg>
+            <svg width="36" height="36" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect width="34" height="34" rx="8" fill="rgba(255,255,255,0.1)"/>
+              <path d="M6 21L10 13H24L28 21H6Z" fill="#f07c1e"/>
+              <rect x="4" y="21" width="26" height="5" rx="1.5" fill="white" opacity="0.8"/>
+              <circle cx="10" cy="26.5" r="2.5" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="24" cy="26.5" r="2.5" fill="rgba(255,255,255,0.3)"/>
+            </svg>
             <div>
               <div class="summary-service-name" id="summary-service-name">Labor Only</div>
               <div class="summary-service-sub">Toro Movers · Central Florida</div>
@@ -1014,5 +1026,6 @@ document.getElementById('reserve-form').addEventListener('submit', async functio
   }
 });
 </script>
+<script src="./animate.js" defer></script>
 </body>
 </html>
