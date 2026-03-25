@@ -1,0 +1,266 @@
+/* animate.css — Toro Movers scroll reveal & motion system
+   Mobile-first. Respects prefers-reduced-motion.
+   All reveals use IntersectionObserver via animate.js
+   ─────────────────────────────────────────────────── */
+
+/* ── BASE REVEAL STATES ──────────────────────────────── */
+
+/* Elements waiting to be revealed */
+[data-reveal] {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Triggered when IntersectionObserver fires */
+[data-reveal].is-visible {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-duration: 0.65s;
+}
+
+/* ── VARIANTS ────────────────────────────────────────── */
+
+/* Fade up — default for most elements */
+[data-reveal="fade-up"].is-visible {
+  animation-name: reveal-fade-up;
+}
+
+/* Fade in — subtle, for large elements */
+[data-reveal="fade"].is-visible {
+  animation-name: reveal-fade;
+}
+
+/* Slide from right — quote card on desktop */
+[data-reveal="slide-right"].is-visible {
+  animation-name: reveal-slide-right;
+}
+
+/* Scale in — CTA banner */
+[data-reveal="scale"].is-visible {
+  animation-name: reveal-scale;
+}
+
+/* ── STAGGER DELAYS ──────────────────────────────────── */
+/* Applied via data-delay attribute in animate.js */
+[data-delay="1"] { animation-delay: 80ms; }
+[data-delay="2"] { animation-delay: 160ms; }
+[data-delay="3"] { animation-delay: 240ms; }
+[data-delay="4"] { animation-delay: 320ms; }
+[data-delay="5"] { animation-delay: 400ms; }
+[data-delay="6"] { animation-delay: 480ms; }
+
+/* ── KEYFRAMES ───────────────────────────────────────── */
+
+@keyframes reveal-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes reveal-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── STAT COUNTER ────────────────────────────────────── */
+/* Numbers start invisible, animate.js swaps the text */
+.stat-number {
+  transition: opacity 0.3s ease;
+}
+.stat-number.counting {
+  opacity: 0.6;
+}
+
+/* ── HERO SPECIFIC ───────────────────────────────────── */
+/* Hero is above-the-fold — lighter, faster animation */
+.hero-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-name: reveal-fade-up;
+}
+
+.hero-animate-1 { animation-duration: 0.5s; animation-delay: 0.05s; }
+.hero-animate-2 { animation-duration: 0.55s; animation-delay: 0.15s; }
+.hero-animate-3 { animation-duration: 0.55s; animation-delay: 0.25s; }
+.hero-animate-4 { animation-duration: 0.55s; animation-delay: 0.35s; }
+.hero-animate-5 { animation-duration: 0.55s; animation-delay: 0.45s; }
+
+/* Quote card slides in from right on desktop, fades up on mobile */
+.quote-card-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-duration: 0.6s;
+  animation-delay: 0.2s;
+}
+
+@media (max-width: 899px) {
+  .quote-card-animate {
+    animation-name: reveal-fade-up;
+    animation-delay: 0.3s;
+  }
+}
+
+@media (min-width: 900px) {
+  .quote-card-animate {
+    animation-name: reveal-slide-right;
+    animation-delay: 0.2s;
+  }
+}
+
+/* ── MOBILE OVERRIDES ────────────────────────────────── */
+/* Reduce translateY on mobile — keeps it crisp, avoids layout shift */
+@media (max-width: 640px) {
+  @keyframes reveal-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Faster on mobile — snappier feel */
+  [data-reveal].is-visible {
+    animation-duration: 0.5s;
+  }
+
+  /* No horizontal slides on mobile — prevent overflow */
+  [data-reveal="slide-right"].is-visible {
+    animation-name: reveal-fade-up;
+  }
+
+  /* Compress stagger gaps on mobile */
+  [data-delay="2"] { animation-delay: 100ms; }
+  [data-delay="3"] { animation-delay: 160ms; }
+  [data-delay="4"] { animation-delay: 200ms; }
+  [data-delay="5"] { animation-delay: 240ms; }
+  [data-delay="6"] { animation-delay: 280ms; }
+}
+
+/* ── RESPECT REDUCED MOTION ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal].is-visible,
+  .hero-animate,
+  .quote-card-animate {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── PRICING CARD HOVER LIFT (enhanced) ──────────────── */
+/* Boost the existing hover with a smoother curve */
+.pricing-card {
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── STEP CARD — subtle slide from left ─────────────── */
+.step-card {
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── REVIEW CARD — hover lift ────────────────────────── */
+.review-card {
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.review-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ── AREA CARD — hover color + lift ─────────────────── */
+.area-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── NAV LOGO — subtle bounce on load ───────────────── */
+.nav-logo {
+  animation: logo-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+@keyframes logo-pop {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-logo { animation: none; opacity: 1; }
+}
+
+/* ── URGENCY BAR — slide down on load ───────────────── */
+.urgency-bar {
+  animation: urgency-slide 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes urgency-slide {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .urgency-bar { animation: none; }
+}
+
+/* ── STICKY CTA — slide up from bottom on mobile ────── */
+@media (max-width: 767px) {
+  .sticky-cta {
+    animation: sticky-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+  }
+  @keyframes sticky-rise {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-cta { animation: none; }
+  }
+}
+
+/* ── PILL LABEL — fade in with slight scale ─────────── */
+[data-reveal="fade-up"].pill-label.is-visible,
+[data-reveal="fade-up"].page-hero-eyebrow.is-visible {
+  animation-duration: 0.45s;
+}
+
+/* ── CTA BANNER PATTERN — subtle movement ────────────── */
+.cta-banner::before {
+  animation: pattern-drift 20s linear infinite;
+  will-change: transform;
+}
+@keyframes pattern-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(60px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-banner::before { animation: none; }
+}
