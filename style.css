@@ -54,10 +54,10 @@
   --color-primary-light:   #e8edf5;
 
   /* Accent: Vivid Amber/Orange — action color */
-  --color-accent:          #f07c1e;
-  --color-accent-hover:    #d96b0d;
-  --color-accent-active:   #be5b08;
-  --color-accent-light:    #fef3e8;
+  --color-accent:          #C8922A;
+  --color-accent-hover:    #b07820;
+  --color-accent-active:   #9a680f;
+  --color-accent-light:    #fdf3e0;
 
   /* Success */
   --color-success:         #1a8c3f;
