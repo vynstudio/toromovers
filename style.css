@@ -166,7 +166,6 @@ section { padding-block: clamp(var(--space-10), 7vw, var(--space-24)); }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
   text-decoration: none;
   flex-shrink: 0;
 }
@@ -176,6 +175,28 @@ section { padding-block: clamp(var(--space-10), 7vw, var(--space-24)); }
   font-weight: 900;
   letter-spacing: -0.03em;
   color: var(--color-primary);
+}
+.nav-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-decoration: none;
+}
+.nav-wordmark-text {
+  font-family: var(--font-display), 'Arial Black', Arial, sans-serif;
+  font-size: clamp(0.95rem, 0.85rem + 0.6vw, 1.25rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #0D1F3C;
+  white-space: nowrap;
+  line-height: 1;
+}
+.nav-wordmark-bar {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #C8922A;
+  border-radius: 2px;
 }
 
 .nav-links {
