@@ -3,6 +3,9 @@
 /* ─── FONTS ─────────────────────────────────────────── */
 @import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap');
 
+/* Ad creative / brand accent fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
 /* ─── DESIGN TOKENS ─────────────────────────────────── */
 :root {
   --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
@@ -21,6 +24,9 @@
 
   --font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
   --font-body:    'Satoshi', 'Helvetica Neue', sans-serif;
+  --font-headline: 'Fraunces', Georgia, serif;
+  --font-ui:       'Syne', Arial, sans-serif;
+  --font-sans:     'DM Sans', 'Helvetica Neue', sans-serif;
 
   --radius-sm: 0.375rem; --radius-md: 0.5rem;   --radius-lg: 0.75rem;
   --radius-xl: 1rem;     --radius-2xl: 1.5rem;  --radius-full: 9999px;
