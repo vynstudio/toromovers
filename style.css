@@ -1,7 +1,7 @@
 /* style.css — Toro Movers v2 Premium Redesign */
 
 /* ─── FONTS ─────────────────────────────────────────── */
-@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 /* ─── DESIGN TOKENS ─────────────────────────────────── */
 :root {
@@ -19,8 +19,9 @@
   --space-16: 4rem;     --space-20: 5rem;    --space-24: 6rem;
   --space-32: 8rem;
 
-  --font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
-  --font-body:    'Satoshi', 'Helvetica Neue', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-ui:      'Syne', Arial, sans-serif;
 
   --radius-sm: 0.375rem; --radius-md: 0.5rem;   --radius-lg: 0.75rem;
   --radius-xl: 1rem;     --radius-2xl: 1.5rem;  --radius-full: 9999px;
@@ -183,7 +184,7 @@ section { padding-block: clamp(var(--space-10), 7vw, var(--space-24)); }
   text-decoration: none;
 }
 .nav-wordmark-text {
-  font-family: 'Cabinet Grotesk', 'Arial Black', Arial, sans-serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.45rem);
   font-weight: 900;
   letter-spacing: 0.02em;
